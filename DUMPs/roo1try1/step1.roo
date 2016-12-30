@@ -1,0 +1,3 @@
+project --topLevelPackage   com.roo1try1
+jpa setup --provider HIBERNATE --database POSTGRES --databaseName postgres --userName postgres --password postgres
+

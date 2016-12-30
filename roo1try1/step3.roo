@@ -1,0 +1,2 @@
+database reverse engineer --schema socker --service --includeNonPortableAttributes --activeRecord
+
