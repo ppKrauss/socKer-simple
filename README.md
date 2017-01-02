@@ -1,4 +1,4 @@
-A basic model for "social kernel" database and back-end, to be implemented in [PostgreSQL 9.6+](https://www.postgresql.org/docs/current/static/functions-json.html) and [Java Spring-Boot framework](http://projects.spring.io/spring-boot/)... Testing limits of the [Object-Relational mapping](https://en.wikipedia.org/wiki/Object-relational_mapping), and showing best practices.
+A basic model for "social kernel" database and back-end, to be implemented with relational-[JSON](http://json.org/) persistence ([PostgreSQL 9.6+](https://www.postgresql.org/docs/current/static/functions-json.html)) and [Java Spring-Boot framework](http://projects.spring.io/spring-boot/)... Testing limits of the [Object-Relational mapping](https://en.wikipedia.org/wiki/Object-relational_mapping), [semantic mapping](https://en.wikipedia.org/wiki/Ontology_alignment), and showing best practices.
 
 It is a simple model of an usual database: a person+organization contact catalogue (the core of any [CRM](https://en.wikipedia.org/wiki/Customer_relationship_management))... With precise information and a [RDF semantic](https://en.wikipedia.org/wiki/Resource_Description_Framework). The basic entities are defined in [SchemaOrg](https://schema.org/):
 
@@ -8,24 +8,16 @@ It is a simple model of an usual database: a person+organization contact catalog
 
 * **_Agent_**: a generalization of Person and Organization (the union of both), as "formal person" ([wd:legal person](https://www.wikidata.org/wiki/Q3778211) and [wd:natural person](https://www.wikidata.org/wiki/Q154954)).  See [foaf:Agent](http://xmlns.com/foaf/spec/#term_Agent) definition.
 
-* **_TeleCom_**: information about telecommunication-[sc:ContactPoint](https://schema.org/ContactPoint) of an _Agent_. Telephone, e-mail, homepage, etc. addresses.
+* **_TeleCom_**: information about (stable) telecommunication-[sc:ContactPoint](https://schema.org/ContactPoint) of an _Agent_. Telephone, e-mail, homepage, etc. addresses.
 
-Optional implementation: we will discuss also the agent-agent relationships that enhance the informations of the catalogue. Examples:
-
-Relation type | *rule* examples (of SchemaOrg)
------------- | -------------
-Organization-Organization      | [subOrganization](https://schema.org/subOrganization), [sponsor](https://schema.org/sponsor), ...
-Organization-Person   | [founder](https://schema.org/founder), [employee](https://schema.org/employee), [sponsor](https://schema.org/sponsor), [affiliation](https://schema.org/affiliation), ...
-Person-Person | [children](https://schema.org/children), [follows](https://schema.org/follows), ...
+Expanding: see Place and Agent-Agent relationships at [SocKer-complete project](https://github.com/ppKrauss/socKer-complete),  less didactic model but near to practical use.
 
 ## Objective
 To implement this model **with good Java and good SQL**, 
 
 ![](https://yuml.me/76e02566)
 
-And enhance with
-
-![](https://yuml.me/88fec87c)
+And used as starting point  (compatible) for [SocKer-complete project](https://github.com/ppKrauss/socKer-complete).
 
 ##  Methodology
 
